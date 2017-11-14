@@ -33,7 +33,6 @@ ADD https://www.privateinternetaccess.com/openvpn/openvpn.zip /etc/openvpn/
 
 COPY openvpn/ /etc/openvpn/
 COPY qbittorrent/ /etc/qbittorrent/
-COPY config/ /config/
 
 VOLUME /data /config
 
