@@ -20,7 +20,6 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY qbittorrent/ /etc/qbittorrent/
-COPY config/ /config/
 
 VOLUME /data /config
 
