@@ -8,8 +8,8 @@ docker run \
 --device /dev/net/tun \
 --name qbittorrent-public \
 --hostname qbittorrent-public \
---volume qbittorrent-public-data:/data \
 --volume qbittorrent-public-config:/config \
+--volume qbittorrent-public-data:/data \
 --publish 8080:8080 \
 --dns 209.222.18.222 \
 --dns 209.222.18.218 \
@@ -28,8 +28,8 @@ docker run \
 --device /dev/net/tun \
 --name qbittorrent-private \
 --hostname qbittorrent-private \
---volume qbittorrent-private-data:/data \
 --volume qbittorrent-private-config:/config \
+--volume qbittorrent-private-data:/data \
 --publish 8081:8081 \
 --dns 209.222.18.222 \
 --dns 209.222.18.218 \
