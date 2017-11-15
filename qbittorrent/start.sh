@@ -1,8 +1,8 @@
 #!/bin/bash
-[ ! -d ${XDG_CONFIG_HOME}/qBittorrent ] && mkdir --parents ${XDG_CONFIG_HOME}/qBittorrent
+[ ! -d "${XDG_CONFIG_HOME}/qBittorrent" ] && mkdir --parents "${XDG_CONFIG_HOME}/qBittorrent"
 
-if [ ! -f ${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf ]; then
-    cat << 'EOF' > ${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf
+if [ ! -f "${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf" ]; then
+    cat << 'EOF' > "${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf"
 [LegalNotice]
 Accepted=true
 
