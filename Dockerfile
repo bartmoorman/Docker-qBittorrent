@@ -21,7 +21,7 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
 
 COPY qbittorrent/ /etc/qbittorrent/
 
-VOLUME /data /config
+VOLUME /config /data
 
 EXPOSE 8080
 
