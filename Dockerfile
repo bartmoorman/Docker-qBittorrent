@@ -11,7 +11,6 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7CA69FC4 \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
-    curl \
     openssh-client \
     qbittorrent-nox \
     unrar \
