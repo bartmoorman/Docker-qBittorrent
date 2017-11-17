@@ -24,5 +24,5 @@ docker run \
 --volume qbittorrent-private-data:/data \
 --publish 8081:8081 \
 --env "QBITTORRENT_WEBUI_PORT=8081" \
-bmoorman/qbittorrent:no-openvpn
+bmoorman/qbittorrent:novpn
 ```
