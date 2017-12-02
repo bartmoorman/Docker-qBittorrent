@@ -1,4 +1,4 @@
-### Public Trackers
+### Usage - Public Trackers
 ```
 docker run \
 --rm \
@@ -12,7 +12,7 @@ docker run \
 bmoorman/qbittorrent:no-openvpn
 ```
 
-### Private Trackers
+### Usage - Private Trackers
 ```
 docker run \
 --rm \
