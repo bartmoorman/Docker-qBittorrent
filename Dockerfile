@@ -11,6 +11,7 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7CA69FC4 \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
+    curl \
     openssh-client \
     qbittorrent-nox \
     unrar \
@@ -25,3 +26,5 @@ VOLUME /config /data
 EXPOSE 8080
 
 CMD ["/etc/qbittorrent/start.sh"]
+
+HEALTHCHECK --interval=60s --timeout=5s CMD curl --silent --location --fail http://localhost:8080/ > /dev/null || exit 1
