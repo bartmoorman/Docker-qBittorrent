@@ -44,3 +44,5 @@ VOLUME /config /data
 EXPOSE 8080
 
 CMD ["/etc/openvpn/start.sh"]
+
+HEALTHCHECK --interval=60s --timeout=5s CMD curl --silent --location --fail http://localhost:8080/ > /dev/null || exit 1
