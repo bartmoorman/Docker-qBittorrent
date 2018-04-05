@@ -1,4 +1,4 @@
-FROM bmoorman/ubuntu
+FROM bmoorman/ubuntu:xenial
 
 ENV QBITTORRENT_WEBUI_PORT="8080" \
     XDG_DATA_HOME="/config" \

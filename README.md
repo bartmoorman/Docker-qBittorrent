@@ -3,21 +3,18 @@
 ### Usage
 ```
 docker run \
---rm \
 --detach \
---init \
---cap-add NET_ADMIN \
---device /dev/net/tun \
---name qbittorrent-public \
---hostname qbittorrent-public \
---volume qbittorrent-public-config:/config \
---volume qbittorrent-public-data:/data \
---publish 8080:8080 \
+--name qbittorrent \
 --dns 209.222.18.222 \
 --dns 209.222.18.218 \
+--cap-add NET_ADMIN \
+--device /dev/net/tun \
+--publish 8080:8080 \
 --env "OPENVPN_USERNAME=**username**" \
 --env "OPENVPN_PASSWORD=**password**" \
-bmoorman/qbittorrent
+--volume qbittorrent-config:/config \
+--volume qbittorrent-data:/data \
+bmoorman/qbittorrent:latest
 ```
 
 ## Without VPN
@@ -25,13 +22,10 @@ bmoorman/qbittorrent
 ### Usage
 ```
 docker run \
---rm \
 --detach \
---init \
---name qbittorrent-public \
---hostname qbittorrent-public \
---volume qbittorrent-public-config:/config \
---volume qbittorrent-public-data:/data \
+--name qbittorrent \
 --publish 8080:8080 \
+--volume qbittorrent-config:/config \
+--volume qbittorrent-data:/data \
 bmoorman/qbittorrent:novpn
 ```
