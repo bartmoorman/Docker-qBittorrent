@@ -23,8 +23,8 @@ COPY qbittorrent/ /etc/qbittorrent/
 
 VOLUME /config /data
 
-EXPOSE 8080
+EXPOSE ${QBITTORRENT_WEBUI_PORT}
 
 CMD ["/etc/qbittorrent/start.sh"]
 
-HEALTHCHECK --interval=60s --timeout=5s CMD curl --silent --location --fail http://localhost:8080/ > /dev/null || exit 1
+HEALTHCHECK --interval=60s --timeout=5s CMD curl --head --insecure --silent --show-error --fail "http://localhost:${QBITTORRENT_WEBUI_PORT}/" || exit 1
