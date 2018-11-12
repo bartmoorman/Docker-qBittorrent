@@ -1,4 +1,4 @@
-FROM bmoorman/ubuntu:xenial
+FROM bmoorman/ubuntu:bionic
 
 ENV OPENVPN_USERNAME="**username**" \
     OPENVPN_PASSWORD="**password**" \
@@ -14,8 +14,8 @@ ARG DEBIAN_FRONTEND="noninteractive"
 
 WORKDIR /etc/openvpn
 
-RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu xenial main ' > /etc/apt/sources.list.d/qbittorrent.list \
- && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu xenial main' >> /etc/apt/sources.list.d/qbittorrent.list \
+RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main ' > /etc/apt/sources.list.d/qbittorrent.list \
+ && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main' >> /etc/apt/sources.list.d/qbittorrent.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7CA69FC4 \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
