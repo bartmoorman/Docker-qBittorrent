@@ -11,6 +11,7 @@ Connection\UPnP=false
 Downloads\SavePath=/data/complete/
 Downloads\TempPath=/data/incomplete/
 Downloads\TempPathEnabled=true
+General\Locale=en
 WebUI\LocalHostAuth=false
 WebUI\UseUPnP=false
 EOF
