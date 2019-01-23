@@ -1,6 +1,6 @@
 ## With VPN provided by Private Internet Access
 
-### Usage
+### Docker Run
 ```
 docker run \
 --detach \
@@ -17,9 +17,37 @@ docker run \
 bmoorman/qbittorrent:latest
 ```
 
+### Docker Compose
+```
+version: "3.7"
+services:
+  qbittorrent:
+    image: bmoorman/qbittorrent:latest
+    container_name: qbittorrent
+    dns:
+      - 209.222.18.222
+      - 209.222.18.218
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - "/dev/net/tun"
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENVPN_USERNAME=**username**
+      - OPENVPN_PASSWORD=**password**
+    volumes:
+      - qbittorrent-config:/config
+      - qbittorrent-data:/data
+
+volumes:
+  qbittorrent-config:
+  qbittorrent-data:
+```
+
 ## Without VPN
 
-### Usage
+### Docker Run
 ```
 docker run \
 --detach \
@@ -28,4 +56,22 @@ docker run \
 --volume qbittorrent-config:/config \
 --volume qbittorrent-data:/data \
 bmoorman/qbittorrent:novpn
+```
+
+### Docker Compose
+```
+version: "3.7"
+services:
+  qbittorrent:
+    image: bmoorman/qbittorrent:novpn
+    container_name: qbittorrent
+    ports:
+      - "8080:8080"
+    volumes:
+      - qbittorrent-config:/config
+      - qbittorrent-data:/data
+
+volumes:
+  qbittorrent-config:
+  qbittorrent-data:
 ```
