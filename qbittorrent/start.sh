@@ -17,5 +17,5 @@ WebUI\UseUPnP=false
 EOF
 fi
 
-$(which qbittorrent-nox) \
+exec $(which qbittorrent-nox) \
     --webui-port=${QBITTORRENT_WEBUI_PORT}
