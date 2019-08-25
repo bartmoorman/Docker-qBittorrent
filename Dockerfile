@@ -16,7 +16,7 @@ WORKDIR /etc/openvpn
 
 RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main ' > /etc/apt/sources.list.d/qbittorrent.list \
  && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main' >> /etc/apt/sources.list.d/qbittorrent.list \
- && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7CA69FC4 \
+ && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D35164147CA69FC4 \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
     curl \
