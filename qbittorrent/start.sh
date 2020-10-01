@@ -1,5 +1,7 @@
 #!/bin/bash
-[ ! -d "${XDG_CONFIG_HOME}/qBittorrent" ] && mkdir --parents "${XDG_CONFIG_HOME}/qBittorrent"
+if [ ! -d "${XDG_CONFIG_HOME}/qBittorrent" ]; then
+    install --directory "${XDG_CONFIG_HOME}/qBittorrent"
+fi
 
 if [ ! -f "${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf" ]; then
     cat << 'EOF' > "${XDG_CONFIG_HOME}/qBittorrent/qBittorrent.conf"

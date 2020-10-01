@@ -20,7 +20,7 @@ if [ ${OPENVPN_CAN_FORWARD} == true ]; then
             port=$(curl --silent --location --data ${data} "https://www.privateinternetaccess.com/vpninfo/port_forward_assignment" | jq --raw-output '.port')
 
             if egrep --silent '^[0-9]+$' <<< ${port}; then
-                curl --data "json={\"listen_port\":${port}}" localhost:${QBITTORRENT_WEBUI_PORT}/command/setPreferences
+                curl --silent --data "json={\"listen_port\":${port}}" localhost:${QBITTORRENT_WEBUI_PORT}/command/setPreferences
                 break
             fi
 

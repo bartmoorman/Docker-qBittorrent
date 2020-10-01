@@ -1,5 +1,7 @@
 FROM bmoorman/ubuntu:bionic
 
+ARG DEBIAN_FRONTEND="noninteractive"
+
 ENV OPENVPN_USERNAME="**username**" \
     OPENVPN_PASSWORD="**password**" \
     OPENVPN_GATEWAY="Automatic" \
@@ -9,8 +11,6 @@ ENV OPENVPN_USERNAME="**username**" \
     QBITTORRENT_MAX_PORT_HRS="8" \
     XDG_DATA_HOME="/config" \
     XDG_CONFIG_HOME="/config"
-
-ARG DEBIAN_FRONTEND="noninteractive"
 
 WORKDIR /etc/openvpn
 

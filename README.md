@@ -5,8 +5,8 @@
 docker run \
 --detach \
 --name qbittorrent \
---dns 209.222.18.222 \
---dns 209.222.18.218 \
+--dns 1.1.1.1 \
+--dns 1.0.0.1 \
 --cap-add NET_ADMIN \
 --device /dev/net/tun \
 --publish 8080:8080 \
@@ -25,8 +25,8 @@ services:
     image: bmoorman/qbittorrent:latest
     container_name: qbittorrent
     dns:
-      - 209.222.18.222
-      - 209.222.18.218
+      - 1.1.1.1
+      - 1.0.0.1
     cap_add:
       - NET_ADMIN
     devices:
