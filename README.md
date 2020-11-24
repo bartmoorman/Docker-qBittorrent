@@ -10,8 +10,8 @@ docker run \
 --cap-add NET_ADMIN \
 --device /dev/net/tun \
 --publish 8080:8080 \
---env "OPENVPN_USERNAME=**username**" \
---env "OPENVPN_PASSWORD=**password**" \
+--env "PIA_USER=**username**" \
+--env "PIA_PASS=**password**" \
 --volume qbittorrent-config:/config \
 --volume qbittorrent-data:/data \
 bmoorman/qbittorrent:latest
@@ -34,8 +34,8 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - OPENVPN_USERNAME=**username**
-      - OPENVPN_PASSWORD=**password**
+      - PIA_USER=**username**
+      - PIA_PASS=**password**
     volumes:
       - qbittorrent-config:/config
       - qbittorrent-data:/data
@@ -75,3 +75,14 @@ volumes:
   qbittorrent-config:
   qbittorrent-data:
 ```
+
+### Environment Variables
+|Variable|Description|Default|
+|--------|-----------|-------|
+|TZ|Sets the timezone|`America/Denver`|
+|PIA_USER|PIA username|`<empty>`|
+|PIA_PASS|PIA password|`<empty>`|
+|LOCAL_NETWORK|Keep local traffic... local|`192.168.0.0/16`|
+|QBITTORRENT_WEBUI_PORT|Sets which port qBit listens on|`8080`|
+|XDG_DATA_HOME||`/config`|
+|XDG_CONFIG_HOME||`/config`|

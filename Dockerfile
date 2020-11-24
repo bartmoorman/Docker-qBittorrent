@@ -2,13 +2,10 @@ FROM bmoorman/ubuntu:bionic
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
-ENV OPENVPN_USERNAME="**username**" \
-    OPENVPN_PASSWORD="**password**" \
-    OPENVPN_GATEWAY="Automatic" \
-    OPENVPN_LOCAL_NETWORK="192.168.0.0/16" \
+ENV PIA_USER="**username**" \
+    PIA_PASS="**password**" \
+    LOCAL_NETWORK="192.168.0.0/16" \
     QBITTORRENT_WEBUI_PORT="8080" \
-    QBITTORRENT_MIN_PORT_HRS="4" \
-    QBITTORRENT_MAX_PORT_HRS="8" \
     XDG_DATA_HOME="/config" \
     XDG_CONFIG_HOME="/config"
 
