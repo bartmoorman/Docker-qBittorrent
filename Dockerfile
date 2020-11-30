@@ -1,10 +1,10 @@
 FROM bmoorman/ubuntu:bionic
 
+ARG DEBIAN_FRONTEND="noninteractive"
+
 ENV QBITTORRENT_WEBUI_PORT="8080" \
     XDG_DATA_HOME="/config" \
     XDG_CONFIG_HOME="/config"
-
-ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main ' > /etc/apt/sources.list.d/qbittorrent.list \
  && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main' >> /etc/apt/sources.list.d/qbittorrent.list \
