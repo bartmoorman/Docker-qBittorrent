@@ -13,11 +13,11 @@ serverlist_url='https://serverlist.piaservers.net/vpninfo/servers/v4'
 
 while true; do
   all_region_data=$(curl --silent "$serverlist_url" | head -1)
-  viable_regions=$(jq --raw-output '.regions[] | select(.port_forward==true) | .servers.meta[0].ip' <<< ${all_region_data})
+  viable_regions=$(jq --raw-output '.regions[] | select(.port_forward == true and .geo == false) | .servers.meta[0].ip' <<< ${all_region_data})
   best_region=$(netselect ${viable_regions} | awk '{print $2}')
 
   if [[ ${best_region} ]]; then
-    region_data=$(jq --raw-output --arg META ${best_region} '.regions[] | select(.servers.meta[0].ip==$META)' <<< ${all_region_data})
+    region_data=$(jq --raw-output --arg META ${best_region} '.regions[] | select(.servers.meta[0].ip == $META)' <<< ${all_region_data})
     region_dns=$(jq --raw-output '.dns' <<< ${region_data})
     region_ip=$(jq --raw-output '.servers.ovpnudp[0].ip' <<< ${region_data})
     region_hostname=$(jq --raw-output '.servers.ovpnudp[0].cn' <<< ${region_data})
