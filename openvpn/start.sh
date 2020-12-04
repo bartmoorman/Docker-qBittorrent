@@ -65,4 +65,4 @@ exec $(which openvpn) \
     --setenv XDG_DATA_HOME "${XDG_DATA_HOME}" \
     --setenv XDG_CONFIG_HOME "${XDG_CONFIG_HOME}" \
     --script-security 2 \
-    --log /var/log/openvpn.log
+    --log /var/log/openvpn/openvpn.log
