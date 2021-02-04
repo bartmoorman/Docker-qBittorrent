@@ -1,4 +1,4 @@
-FROM bmoorman/ubuntu:bionic
+FROM bmoorman/ubuntu:focal
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
@@ -6,8 +6,8 @@ ENV QBITTORRENT_WEBUI_PORT="8080" \
     XDG_DATA_HOME="/config" \
     XDG_CONFIG_HOME="/config"
 
-RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main ' > /etc/apt/sources.list.d/qbittorrent.list \
- && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main' >> /etc/apt/sources.list.d/qbittorrent.list \
+RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu focal main ' > /etc/apt/sources.list.d/qbittorrent.list \
+ && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu focal main' >> /etc/apt/sources.list.d/qbittorrent.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D35164147CA69FC4 \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
