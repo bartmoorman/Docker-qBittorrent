@@ -21,11 +21,9 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
     jq \
-    openssh-client \
     openvpn \
     qbittorrent-nox \
     speedtest \
-    unrar \
     unzip \
     wget \
  && wget --quiet --directory-prefix /usr/local/share/ca-certificates "https://raw.githubusercontent.com/pia-foss/manual-connections/master/ca.rsa.4096.crt" \
