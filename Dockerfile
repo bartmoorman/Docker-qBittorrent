@@ -14,11 +14,8 @@ RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubunt
  && curl --silent --location "https://packagecloud.io/ookla/speedtest-cli/gpgkey" | apt-key add \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
-    openssh-client \
     qbittorrent-nox \
     speedtest \
-    unrar \
-    unzip \
  && apt-get autoremove --yes --purge \
  && apt-get clean \
  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
