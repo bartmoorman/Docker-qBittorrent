@@ -12,11 +12,11 @@ ENV PIA_USER="**username**" \
 
 WORKDIR /etc/openvpn
 
-RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main ' > /etc/apt/sources.list.d/qbittorrent.list \
- && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main' >> /etc/apt/sources.list.d/qbittorrent.list \
+RUN echo 'deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu focal main ' > /etc/apt/sources.list.d/qbittorrent.list \
+ && echo 'deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu focal main' >> /etc/apt/sources.list.d/qbittorrent.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D35164147CA69FC4 \
- && echo 'deb https://packagecloud.io/ookla/speedtest-cli/ubuntu/ bionic main' > /etc/apt/sources.list.d/ookla_speedtest-cli.list \
- && echo 'deb-src https://packagecloud.io/ookla/speedtest-cli/ubuntu/ bionic main' >> /etc/apt/sources.list.d/ookla_speedtest-cli.list \
+ && echo 'deb https://packagecloud.io/ookla/speedtest-cli/ubuntu/ focal main' > /etc/apt/sources.list.d/ookla_speedtest-cli.list \
+ && echo 'deb-src https://packagecloud.io/ookla/speedtest-cli/ubuntu/ focal main' >> /etc/apt/sources.list.d/ookla_speedtest-cli.list \
  && curl --silent --location "https://packagecloud.io/ookla/speedtest-cli/gpgkey" | apt-key add \
  && apt-get update \
  && apt-get install --yes --no-install-recommends \
